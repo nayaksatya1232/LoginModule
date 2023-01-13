@@ -11,7 +11,7 @@ function login(event) {
         return;
     }
 
-    let UserList = localStorage.getItem('UserList') ? JSON.parse(window.atob(localStorage.getItem('UserList'))) : [];
+    let UserList = localStorage.getItem('UserList') ? JSON.parse(localStorage.getItem('UserList')) : [];
 
     let user = UserList.filter((user) => {
         return user['email'] === email && user['password'] === pwd;
