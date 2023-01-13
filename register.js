@@ -5,8 +5,7 @@ function register(event) {
 
     event.preventDefault();
 
-    let UserList = localStorage.getItem('UserList') ?
-        JSON.parse(window.atob(localStorage.getItem('UserList'))) : [];
+    let UserList = localStorage.getItem('UserList') ? JSON.parse(window.atob(localStorage.getItem('UserList'))) : [];
 
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
