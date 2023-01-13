@@ -5,7 +5,7 @@ function register(event) {
 
     event.preventDefault();
 
-    let UserList = localStorage.getItem('UserList') ? JSON.parse(window.atob(localStorage.getItem('UserList'))) : [];
+    let UserList = localStorage.getItem('UserList') ? JSON.parse(localStorage.getItem('UserList')) : [];
 
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
@@ -28,7 +28,7 @@ function register(event) {
         });
         if (checkUser.length === 0) {
             UserList.push(user);
-            let userListString = window.btoa(JSON.stringify(UserList));
+            let userListString = JSON.stringify(UserList);
             localStorage.setItem("UserList", userListString);
             window.location.href = "index.html";
             alert('Registered Successfully.....');
